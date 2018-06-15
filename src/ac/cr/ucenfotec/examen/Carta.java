@@ -16,12 +16,9 @@ public class Carta {
 	 * @throws Exception 
 	 */
 	public Carta(String nombre, String palo, int valor) throws Exception {
-		if(valor > 10 || valor < 1) {
-			throw new Exception();
-		}
 		Nombre = nombre;
 		Palo = palo;
-		Valor = valor;
+		Valor = checkValor(valor);
 	}
 
 
@@ -46,10 +43,14 @@ public class Carta {
 	}
 
 	public void setValor(int valor) throws Exception {
+		Valor = checkValor(valor);
+	}
+	
+	private int checkValor(int valor) throws Exception {
 		if(valor > 10 || valor < 1) {
 			throw new Exception();
 		}
-		Valor = valor;
+		return valor;
 	}
 
 
