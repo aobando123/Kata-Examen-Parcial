@@ -20,6 +20,9 @@ public class Jugador {
 	public void agregarCarta(Carta carta) {
 		Mano.add(carta);
 	}
+	public int cantidadCartasEnMano() {
+		return Mano.size();
+	}
 	public ArrayList<Carta> getMano() {
 		return Mano;
 	}

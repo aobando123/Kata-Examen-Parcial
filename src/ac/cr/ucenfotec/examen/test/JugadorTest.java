@@ -18,9 +18,9 @@ public class JugadorTest {
 
 	@Test
 	public void cartasSonAgregadas() {
-		int cantidadInicial =  jugador.getMano().size();
+		int cantidadInicial =  jugador.cantidadCartasEnMano();
 		Carta carta = new Carta();
 		jugador.agregarCarta(carta);
-		assertEquals(cantidadInicial+1, jugador.getMano().size());
+		assertEquals(cantidadInicial+1, jugador.cantidadCartasEnMano());
 	}
 }
