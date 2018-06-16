@@ -1,19 +1,19 @@
 package ac.cr.ucenfotec.examen;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Naipe {
 
 	public Naipe() throws Exception {
 		crearBaraja();
 	}
-	private ArrayList<Carta> baraja;
-	public ArrayList<Carta> getBaraja() {
+	private LinkedList<Carta> baraja;
+	public LinkedList<Carta> getBaraja() {
 		return baraja;
 	}
 	
 	private void crearBaraja() throws Exception{
-		baraja = new ArrayList<Carta>();
+		baraja = new LinkedList<Carta>();
 		int count = 1;
 		for( Palos palo : Palos.values()) {
 			for( Nombres nombre : Nombres.values()){
