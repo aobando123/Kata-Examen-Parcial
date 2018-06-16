@@ -29,4 +29,10 @@ public class Mesa {
 			}
 		}
 	}
+
+	public ArrayList<Jugador> getJugadores() {
+		return Jugadores;
+	}
+	
+	
 }
