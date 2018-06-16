@@ -17,11 +17,14 @@ public class Repartidor {
 		Collections.shuffle(naipe.getBaraja());
 	}
 	
-	public Carta obtenerCarta() {
+	public Carta darCarta () {
 		Carta cartaObtenida = naipe.getBaraja().get(0);
 		naipe.getBaraja().removeFirst();
 		return cartaObtenida;
 		
+	}
+	public int obtenerCantidadCartas() {
+		return naipe.getBaraja().size();
 	}
 
 }

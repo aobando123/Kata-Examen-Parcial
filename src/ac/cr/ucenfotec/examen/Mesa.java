@@ -22,4 +22,11 @@ public class Mesa {
 		}
 		Jugadores.add(jugadorAgregar);
 	}
+	public void empezarAJugar21() {
+		for(Jugador jugadorElegido : Jugadores) {
+			for (int i = 0; i < 2; i++) {
+				jugadorElegido.agregarCarta(Dealer.darCarta());
+			}
+		}
+	}
 }
