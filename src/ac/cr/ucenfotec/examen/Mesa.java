@@ -42,7 +42,7 @@ public class Mesa {
 		Jugador ganador = null;
 		for(Jugador jugador : Jugadores) {
 			valorMano = jugador.getValorMano();
-			if(is21yMedio(jugador.getMano())) {
+			if(is21yMedio(jugador.getMano()) || valorMano == 21) {
 				ganador = jugador;
 				break;
 			}
@@ -103,5 +103,7 @@ public class Mesa {
 		}
 		
 	}
+	
+
 	
 }

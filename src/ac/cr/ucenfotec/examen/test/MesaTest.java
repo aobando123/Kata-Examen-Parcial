@@ -165,6 +165,28 @@ public class MesaTest {
 		
 		assertEquals(futuroGanador, ganador);
 	}
+	
+	@Test
+	public void jugadorGana21() throws Exception {
+		mesa = new Mesa();
+		Jugador futuroGanador = new Jugador("Felipe");
+		Jugador jugador2 = new Jugador("Adrian");
+		Carta carta1 = new Carta(Nombres.Jota.toString(),Palos.ESCUDOS.toString(),10);
+		Carta carta2 = new Carta(Nombres.Dos.toString(),Palos.ESCUDOS.toString(),2);
+		Carta carta3 = new Carta(Nombres.As.toString(),Palos.ESCUDOS.toString(),1);
+		Carta carta4 = new Carta(Nombres.Quina.toString(),Palos.ESCUDOS.toString(),10);
+		futuroGanador.agregarCarta(carta3);//1
+		futuroGanador.agregarCarta(carta1);//10
+		futuroGanador.agregarCarta(carta4);//10
+		jugador2.agregarCarta(carta2);//2
+		jugador2.agregarCarta(carta3);//1
+		mesa.agregarJugador(jugador2);
+		mesa.agregarJugador(futuroGanador);
+		
+		Jugador ganador = mesa.verManos();
+		
+		assertEquals(futuroGanador, ganador);
+	}
 
 	
 
