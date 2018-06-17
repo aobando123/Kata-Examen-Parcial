@@ -145,6 +145,27 @@ public class MesaTest {
 		assertTrue(jugador.getMano().contains(carta1) && jugador.getMano().contains(carta2));
 		
 	}
+	
+	@Test
+	public void jugadorGana21YMedio() throws Exception {
+		mesa = new Mesa();
+		Jugador futuroGanador = new Jugador("Felipe");
+		Jugador jugador2 = new Jugador("Adrian");
+		Carta carta1 = new Carta(Nombres.Jota.toString(),Palos.ESCUDOS.toString(),10);
+		Carta carta2 = new Carta(Nombres.Dos.toString(),Palos.ESCUDOS.toString(),2);
+		Carta carta3 = new Carta(Nombres.Tres.toString(),Palos.ESCUDOS.toString(),3);
+		futuroGanador.agregarCarta(carta1);
+		futuroGanador.agregarCarta(carta2);
+		jugador2.agregarCarta(carta1);
+		jugador2.agregarCarta(carta3);
+		mesa.agregarJugador(jugador2);
+		mesa.agregarJugador(futuroGanador);
+		
+		Jugador ganador = mesa.verManos();
+		
+		assertEquals(futuroGanador, ganador);
+	}
 
+	
 
 }

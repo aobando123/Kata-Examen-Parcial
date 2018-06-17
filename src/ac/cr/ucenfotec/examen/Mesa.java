@@ -42,6 +42,11 @@ public class Mesa {
 		Jugador ganador = null;
 		for(Jugador jugador : Jugadores) {
 			valorMano = jugador.getValorMano();
+			if(is21yMedio(jugador.getMano())) {
+				ganador = jugador;
+				break;
+			}
+			
 			if(valorGanador < valorMano && valorMano < 21) {
 				valorGanador = valorMano;
 				ganador = jugador;
@@ -51,6 +56,21 @@ public class Mesa {
 		}
 		
 		return ganador;
+	}
+	
+	private boolean is21yMedio(ArrayList<Carta> cartas) {
+		boolean is10Found = false;
+		boolean is2Found = false;
+		for (Carta carta: cartas) {
+			if(carta.getValor() == 10 && !is10Found) {
+				is10Found = true;
+			}else if(carta.getValor() == 2 && !is2Found) {
+				is2Found = true;
+			}
+			
+		}
+		
+		return is10Found && is2Found;
 	}
 	
 	public Jugador verificarCambio(Jugador jugador) {
