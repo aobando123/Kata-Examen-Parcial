@@ -112,17 +112,17 @@ public class Mesa {
 				jugador.agregarCarta(Dealer.darCarta());
 			}
 		}
-		//Deck = Dealer.getNaipe();
+		Deck = Dealer.getNaipe();
 	}
 	
-//	public void tomarCarta(Jugador jugador) {
-//		Carta cartaObtenida = Deck.getBaraja().get(0);
-//		Deck.getBaraja().removeFirst();
-//		jugador.agregarCarta(cartaObtenida);
-//	}
-//	
-//	public int cartasEnDeck() {
-//		return Deck.getBaraja().size();
-//	}
+	public void tomarCarta(Jugador jugador) {
+		Carta cartaObtenida = Deck.getBaraja().get(0);
+		Deck.getBaraja().removeFirst();
+		jugador.agregarCarta(cartaObtenida);
+	}
+	
+	public int cartasEnDeck() {
+		return Deck.getBaraja().size();
+	}
 	
 }

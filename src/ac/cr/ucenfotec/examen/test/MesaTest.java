@@ -197,14 +197,14 @@ public class MesaTest {
 		assertEquals(28,sumatoria);
 	}
 
-//	@Test 
-//	public void tomarCartaDelDeck() {
-//		mesa.empezarPartidaDeRon();
-//		Jugador jugadorTest = mesa.getJugadores().get(0);
-//		int cartasAntesDeTomar = mesa.cartasEnDeck();
-//		mesa.tomarCarta(jugadorTest);
-//		assertEquals(cartasAntesDeTomar-1, mesa.cartasEnDeck());
-//	}
+	@Test 
+	public void tomarCartaDelDeck() {
+		mesa.empezarPartidaDeRon();
+		Jugador jugadorTest = mesa.getJugadores().get(0);
+		int cartasAntesDeTomar = mesa.cartasEnDeck();
+		mesa.tomarCarta(jugadorTest);
+		assertEquals(cartasAntesDeTomar-1, mesa.cartasEnDeck());
+	}
 	
 
 }
