@@ -26,5 +26,12 @@ public class Jugador {
 	public ArrayList<Carta> getMano() {
 		return Mano;
 	}
+	public int getValorMano() {
+		int sumatoria = 0;
+		for(Carta carta : Mano) {
+			sumatoria += carta.getValor();
+		}
+		return sumatoria;
+	}
 	
 }

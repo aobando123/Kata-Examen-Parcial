@@ -34,5 +34,22 @@ public class Mesa {
 		return Jugadores;
 	}
 	
+	public Jugador verManos() {
+		int valorGanador=0;
+		int valorMano;
+		Jugador ganador = null;
+		for(Jugador jugador : Jugadores) {
+			valorMano = jugador.getValorMano();
+			if(valorGanador < valorMano && valorMano < 21) {
+				valorGanador = valorMano;
+				ganador = jugador;
+			} else if (valorGanador == valorMano) {
+				ganador = null;
+			}
+		}
+		
+		return ganador;
+	}
+	
 	
 }

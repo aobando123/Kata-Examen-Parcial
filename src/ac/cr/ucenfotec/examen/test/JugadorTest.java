@@ -23,4 +23,12 @@ public class JugadorTest {
 		jugador.agregarCarta(carta);
 		assertEquals(cantidadInicial+1, jugador.cantidadCartasEnMano());
 	}
+	
+	@Test 
+	public void retornarValorDeMano() throws Exception {
+		Carta carta =  new Carta();
+		carta.setValor(3);
+		jugador.agregarCarta(carta);
+		assertEquals(3, jugador.getValorMano());
+	}
 }
