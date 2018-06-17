@@ -83,6 +83,64 @@ public class MesaTest {
 		
 		assertFalse(ganador != null);
 	}
+	
+	
+	@Test
+	public void jugadorPuedeCambiarConTres() throws Exception {
+		Jugador jugador = new Jugador("Adrian");
+		Carta carta1 = new Carta(Nombres.Tres.toString(),Palos.ESCUDOS.toString(),3);
+		Carta carta2 = new Carta(Nombres.Cuatro.toString(),Palos.ESCUDOS.toString(),4);
+		jugador.agregarCarta(carta1);
+		jugador.agregarCarta(carta2);
+		jugador = mesa.verificarCambio(jugador);
+		assertFalse(jugador.getMano().contains(carta1) && jugador.getMano().contains(carta2));
+		
+	}
+	@Test
+	public void jugadorPuedeCambiarConJota() throws Exception {
+		Jugador jugador = new Jugador("Adrian");
+		Carta carta1 = new Carta(Nombres.Jota.toString(),Palos.ESCUDOS.toString(),10);
+		Carta carta2 = new Carta(Nombres.Cuatro.toString(),Palos.ESCUDOS.toString(),4);
+		jugador.agregarCarta(carta1);
+		jugador.agregarCarta(carta2);
+		jugador = mesa.verificarCambio(jugador);
+		assertFalse(jugador.getMano().contains(carta1) && jugador.getMano().contains(carta2));
+		
+	}
+	@Test
+	public void jugadorPuedeCambiarConQuina() throws Exception {
+		Jugador jugador = new Jugador("Adrian");
+		Carta carta1 = new Carta(Nombres.Quina.toString(),Palos.ESCUDOS.toString(),10);
+		Carta carta2 = new Carta(Nombres.Cuatro.toString(),Palos.ESCUDOS.toString(),4);
+		jugador.agregarCarta(carta1);
+		jugador.agregarCarta(carta2);
+		jugador = mesa.verificarCambio(jugador);
+		assertFalse(jugador.getMano().contains(carta1) && jugador.getMano().contains(carta2));
+		
+	}
+	@Test
+	public void jugadorPuedeCambiarConKa() throws Exception {
+		Jugador jugador = new Jugador("Adrian");
+		Carta carta1 = new Carta(Nombres.Ka.toString(),Palos.ESCUDOS.toString(),10);
+		Carta carta2 = new Carta(Nombres.Cuatro.toString(),Palos.ESCUDOS.toString(),4);
+		jugador.agregarCarta(carta1);
+		jugador.agregarCarta(carta2);
+		jugador = mesa.verificarCambio(jugador);
+		assertFalse(jugador.getMano().contains(carta1) && jugador.getMano().contains(carta2));
+		
+	}
+	
+	@Test
+	public void jugadorNoCambia() throws Exception {
+		Jugador jugador = new Jugador("Adrian");
+		Carta carta1 = new Carta(Nombres.Dos.toString(),Palos.ESCUDOS.toString(),2);
+		Carta carta2 = new Carta(Nombres.Cuatro.toString(),Palos.ESCUDOS.toString(),4);
+		jugador.agregarCarta(carta1);
+		jugador.agregarCarta(carta2);
+		jugador = mesa.verificarCambio(jugador);
+		assertTrue(jugador.getMano().contains(carta1) && jugador.getMano().contains(carta2));
+		
+	}
 
 
 }

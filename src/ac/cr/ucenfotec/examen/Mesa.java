@@ -1,5 +1,7 @@
 package ac.cr.ucenfotec.examen;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
+
 import java.util.ArrayList;
 
 public class Mesa {
@@ -51,5 +53,35 @@ public class Mesa {
 		return ganador;
 	}
 	
+	public Jugador verificarCambio(Jugador jugador) {
+		boolean isCambio = false;
+		ArrayList<String> cartasCambio = new ArrayList<>();
+		cartasCambio.add(Nombres.Tres.toString());
+		cartasCambio.add(Nombres.Jota.toString());
+		cartasCambio.add(Nombres.Quina.toString());
+		cartasCambio.add(Nombres.Ka.toString());
+		
+		
+		for (Carta carta: jugador.getMano()) {
+			if(cartasCambio.contains(carta.getNombre())){
+				isCambio = true;
+				break;
+			}
+		}
+		if(isCambio) {
+			cambio(jugador);
+		}
+		return jugador;
+			
+	}
+	
+	public void cambio(Jugador jugador) {
+		int tamanoMano = jugador.cantidadCartasEnMano();
+		jugador.getMano().clear();
+		for (int i = 0; i < tamanoMano; i++) {
+			jugador.agregarCarta(Dealer.darCarta());
+		}
+		
+	}
 	
 }
