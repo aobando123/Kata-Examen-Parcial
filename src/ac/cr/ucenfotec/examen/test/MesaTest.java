@@ -94,6 +94,7 @@ public class MesaTest {
 		jugador.agregarCarta(carta2);
 		jugador = mesa.verificarCambio(jugador);
 		assertFalse(jugador.getMano().contains(carta1) && jugador.getMano().contains(carta2));
+		assertEquals(2, jugador.cantidadCartasEnMano());
 		
 	}
 	@Test
@@ -105,6 +106,7 @@ public class MesaTest {
 		jugador.agregarCarta(carta2);
 		jugador = mesa.verificarCambio(jugador);
 		assertFalse(jugador.getMano().contains(carta1) && jugador.getMano().contains(carta2));
+		assertEquals(2, jugador.cantidadCartasEnMano());
 		
 	}
 	@Test
@@ -116,6 +118,7 @@ public class MesaTest {
 		jugador.agregarCarta(carta2);
 		jugador = mesa.verificarCambio(jugador);
 		assertFalse(jugador.getMano().contains(carta1) && jugador.getMano().contains(carta2));
+		assertEquals(2, jugador.cantidadCartasEnMano());
 		
 	}
 	@Test
@@ -127,6 +130,7 @@ public class MesaTest {
 		jugador.agregarCarta(carta2);
 		jugador = mesa.verificarCambio(jugador);
 		assertFalse(jugador.getMano().contains(carta1) && jugador.getMano().contains(carta2));
+		assertEquals(2, jugador.cantidadCartasEnMano());
 		
 	}
 	
