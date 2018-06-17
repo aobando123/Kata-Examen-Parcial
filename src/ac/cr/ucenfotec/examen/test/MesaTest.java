@@ -215,5 +215,12 @@ public class MesaTest {
 		assertEquals(cartasAntesDeTomar, jugadorTest.cantidadCartasEnMano());
 	}
 	
+	@Test 
+	public void resetDeMesa() throws Exception {
+		mesa.reset();
+		assertEquals(0, mesa.cantidadJugadoresPresentes());
+		assertEquals(52, mesa.getCartasConRepartidor());
+		
+	}
 
 }

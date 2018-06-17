@@ -17,6 +17,10 @@ public class Mesa {
 		Jugadores = new ArrayList<Jugador>();
 	}
 	
+	public int getCartasConRepartidor() {
+		return Dealer.getNaipe().getBaraja().size();
+	}
+	
 	public int cantidadJugadoresPresentes() {
 		return Jugadores.size();
 	}
@@ -129,6 +133,11 @@ public class Mesa {
 	
 	public int cartasEnDeck() {
 		return Deck.getBaraja().size();
+	}
+	
+	public void reset() throws Exception {
+		Jugadores.clear();
+		Dealer = new Repartidor();
 	}
 	
 }
