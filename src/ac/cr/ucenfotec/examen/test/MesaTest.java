@@ -187,7 +187,24 @@ public class MesaTest {
 		
 		assertEquals(futuroGanador, ganador);
 	}
+	@Test 
+	public void testPartidaDeRon() {
+		mesa.empezarPartidaDeRon();
+		int sumatoria = 0;
+		for(Jugador jugador : mesa.getJugadores()) {
+			sumatoria += jugador.cantidadCartasEnMano();
+		}
+		assertEquals(28,sumatoria);
+	}
 
+//	@Test 
+//	public void tomarCartaDelDeck() {
+//		mesa.empezarPartidaDeRon();
+//		Jugador jugadorTest = mesa.getJugadores().get(0);
+//		int cartasAntesDeTomar = mesa.cartasEnDeck();
+//		mesa.tomarCarta(jugadorTest);
+//		assertEquals(cartasAntesDeTomar-1, mesa.cartasEnDeck());
+//	}
 	
 
 }

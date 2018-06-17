@@ -13,6 +13,11 @@ public class Repartidor {
 	}
 
 
+//	public Naipe getNaipe() {
+//		return naipe;
+//	}
+
+
 	private void barajar() {
 		Collections.shuffle(naipe.getBaraja());
 	}

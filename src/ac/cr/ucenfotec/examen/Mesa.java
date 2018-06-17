@@ -3,11 +3,13 @@ package ac.cr.ucenfotec.examen;
 import static org.hamcrest.CoreMatchers.instanceOf;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Mesa {
 	
 	private Repartidor Dealer;
 	private ArrayList<Jugador> Jugadores;
+	private Naipe Deck;
 
 	public Mesa() throws Exception {
 		Dealer = new Repartidor();
@@ -104,6 +106,23 @@ public class Mesa {
 		
 	}
 	
-
+	public void empezarPartidaDeRon() {
+		for (int i = 0; i < 7; i++) {
+			for(Jugador jugador : Jugadores) {
+				jugador.agregarCarta(Dealer.darCarta());
+			}
+		}
+		//Deck = Dealer.getNaipe();
+	}
+	
+//	public void tomarCarta(Jugador jugador) {
+//		Carta cartaObtenida = Deck.getBaraja().get(0);
+//		Deck.getBaraja().removeFirst();
+//		jugador.agregarCarta(cartaObtenida);
+//	}
+//	
+//	public int cartasEnDeck() {
+//		return Deck.getBaraja().size();
+//	}
 	
 }
