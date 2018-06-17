@@ -206,5 +206,14 @@ public class MesaTest {
 		assertEquals(cartasAntesDeTomar-1, mesa.cartasEnDeck());
 	}
 	
+	@Test
+	public void desecharCartaCuandoAgarradelDeck() {
+		mesa.empezarPartidaDeRon();
+		Jugador jugadorTest = mesa.getJugadores().get(0);
+		int cartasAntesDeTomar = jugadorTest.cantidadCartasEnMano();
+		mesa.tomarCarta(jugadorTest);
+		assertEquals(cartasAntesDeTomar, jugadorTest.cantidadCartasEnMano());
+	}
+	
 
 }

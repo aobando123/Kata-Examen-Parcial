@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Mesa {
 	
@@ -119,6 +120,11 @@ public class Mesa {
 		Carta cartaObtenida = Deck.getBaraja().get(0);
 		Deck.getBaraja().removeFirst();
 		jugador.agregarCarta(cartaObtenida);
+		desecharCarta(jugador);
+	}
+	public void desecharCarta(Jugador jugador) {
+		int cartaRandom = ThreadLocalRandom.current().nextInt(0, jugador.cantidadCartasEnMano());
+		jugador.getMano().remove(cartaRandom);
 	}
 	
 	public int cartasEnDeck() {
